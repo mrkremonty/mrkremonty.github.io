@@ -1,0 +1,585 @@
+<!doctype html>
+<html lang="pl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="MRK Remonty — kompleksowe wykańczanie wnętrz w Krakowie i okolicach. Remont pod klucz, wykończenia, home staging pod sprzedaż i wynajem.">
+<meta name="theme-color" content="#17253B">
+<meta property="og:title" content="MRK Remonty — kompleksowe wykańczanie wnętrz, Kraków">
+<meta property="og:description" content="Wnętrze od pustych ścian do gotowego odbioru. Jeden wykonawca, Kraków i okolice.">
+<meta property="og:type" content="website">
+<style>html,body{margin:0}img,svg{max-width:100%}</style>
+<title>MRK Remonty — kompleksowe wykańczanie wnętrz, Kraków</title>
+<script>document.documentElement.classList.add('js');</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400&family=Manrope:wght@400;500;600;700;800&display=swap">
+<style>
+  :root {
+    /* brand */
+    --navy: #17253B;
+    --navy-700: #1E314C;
+    --brass: #E4A13B;
+    --brass-600: #C9861F;
+    --steel: #6B7A90;
+
+    /* light theme tokens */
+    --paper: #EBEEF1;
+    --surface: #FFFFFF;
+    --surface-2: #F3F4F6;
+    --ink: #14202F;
+    --muted: #58657A;
+    --line: #D9DEE5;
+    --line-soft: #E6E9EE;
+
+    --hero-ink: #F3EFE7;
+    --hero-muted: #A6B2C3;
+
+    --maxw: 1180px;
+    --radius: 4px;
+    --radius-lg: 8px;
+
+    --f-serif: "Fraunces", "Iowan Old Style", "Palatino Linotype", Georgia, "Times New Roman", serif;
+    --f-sans: "Manrope", "Avenir Next", "Segoe UI", system-ui, -apple-system, sans-serif;
+
+    --ease: cubic-bezier(0.22, 1, 0.36, 1);
+    --shadow: 0 30px 60px -34px rgba(20, 32, 47, 0.45);
+    --shadow-sm: 0 12px 30px -20px rgba(20, 32, 47, 0.4);
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --paper: #0E1622;
+      --surface: #15202E;
+      --surface-2: #1A2635;
+      --ink: #E9EEF4;
+      --muted: #96A3B5;
+      --line: #26364A;
+      --line-soft: #1F2E40;
+      --shadow: 0 30px 60px -30px rgba(0, 0, 0, 0.6);
+      --shadow-sm: 0 14px 34px -24px rgba(0, 0, 0, 0.6);
+    }
+  }
+  :root[data-theme="light"] {
+    --paper:#EBEEF1; --surface:#FFFFFF; --surface-2:#F3F4F6; --ink:#14202F;
+    --muted:#58657A; --line:#D9DEE5; --line-soft:#E6E9EE;
+    --shadow:0 30px 60px -34px rgba(20,32,47,0.45); --shadow-sm:0 12px 30px -20px rgba(20,32,47,0.4);
+  }
+  :root[data-theme="dark"] {
+    --paper:#0E1622; --surface:#15202E; --surface-2:#1A2635; --ink:#E9EEF4;
+    --muted:#96A3B5; --line:#26364A; --line-soft:#1F2E40;
+    --shadow:0 30px 60px -30px rgba(0,0,0,0.6); --shadow-sm:0 14px 34px -24px rgba(0,0,0,0.6);
+  }
+
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+  body {
+    margin: 0;
+    background: var(--paper);
+    color: var(--ink);
+    font-family: var(--f-sans);
+    font-size: 17px;
+    line-height: 1.62;
+    font-weight: 400;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+    overflow-x: hidden;
+  }
+  /* fine grain for depth */
+  body::before {
+    content: "";
+    position: fixed; inset: 0; z-index: 0; pointer-events: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.5'/%3E%3C/svg%3E");
+    opacity: 0.025; mix-blend-mode: multiply;
+  }
+  @media (prefers-color-scheme: dark) { body::before { mix-blend-mode: screen; opacity: 0.035; } }
+  :root[data-theme="dark"] body::before { mix-blend-mode: screen; opacity: 0.035; }
+  :root[data-theme="light"] body::before { mix-blend-mode: multiply; opacity: 0.025; }
+
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    * { animation: none !important; transition: none !important; }
+    .reveal { opacity: 1 !important; transform: none !important; }
+  }
+
+  .wrap { width: min(100% - 2.6rem, var(--maxw)); margin-inline: auto; position: relative; z-index: 1; }
+  a { color: inherit; }
+  h1, h2, h3, h4 { margin: 0; font-family: var(--f-serif); font-weight: 500; line-height: 1.06; letter-spacing: -0.01em; text-wrap: balance; }
+  p { margin: 0; }
+
+  /* eyebrow / micro-label */
+  .eyebrow {
+    display: inline-flex; align-items: center; gap: 0.6rem;
+    font-family: var(--f-sans); font-size: 0.7rem; font-weight: 700;
+    letter-spacing: 0.24em; text-transform: uppercase; color: var(--muted);
+  }
+  .eyebrow::before { content: ""; width: 26px; height: 1px; background: var(--brass); }
+  .eyebrow.on-navy { color: var(--hero-muted); }
+
+  .btn {
+    display: inline-flex; align-items: center; justify-content: center; gap: 0.55rem;
+    font-family: var(--f-sans); font-weight: 700; font-size: 0.9rem; letter-spacing: 0.01em;
+    padding: 0.8rem 1.4rem; border-radius: var(--radius); text-decoration: none;
+    background: var(--brass); color: #241606;
+    border: 1px solid transparent; cursor: pointer;
+    transition: transform 0.35s var(--ease), box-shadow 0.35s var(--ease), background 0.25s ease, border-color 0.25s ease;
+  }
+  .btn:hover { background: var(--brass-600); transform: translateY(-2px); box-shadow: 0 14px 26px -12px rgba(201,134,31,0.6); }
+  .btn.ghost { background: transparent; color: var(--ink); border-color: var(--line); }
+  .btn.ghost:hover { background: transparent; border-color: var(--brass); color: var(--ink); box-shadow: none; transform: translateY(-2px); }
+
+  /* ---------------- header ---------------- */
+  header.site {
+    position: sticky; top: 0; z-index: 50;
+    background: color-mix(in srgb, var(--paper) 82%, transparent);
+    backdrop-filter: blur(14px) saturate(1.2);
+    border-bottom: 1px solid var(--line-soft);
+  }
+  .nav { display: flex; align-items: center; gap: 1.6rem; padding: 0.9rem 0; }
+  .brand { display: flex; align-items: center; gap: 0.7rem; text-decoration: none; margin-right: auto; }
+  .brand .mark { width: 38px; height: 38px; flex: none; }
+  .brand .wm { display: flex; flex-direction: column; line-height: 1.05; }
+  .brand .wm b { font-family: var(--f-serif); font-weight: 600; font-size: 1.16rem; letter-spacing: 0; }
+  .brand .wm b i { font-style: normal; color: var(--brass-600); }
+  @media (prefers-color-scheme: dark){ .brand .wm b i { color: var(--brass); } }
+  :root[data-theme="dark"] .brand .wm b i { color: var(--brass); }
+  .brand .wm small { font-family: var(--f-sans); font-size: 0.56rem; font-weight: 700; letter-spacing: 0.28em; text-transform: uppercase; color: var(--steel); margin-top: 3px; }
+  .nav .links { display: flex; gap: 1.7rem; }
+  .nav .links a { text-decoration: none; color: var(--muted); font-size: 0.9rem; font-weight: 600; position: relative; padding: 2px 0; }
+  .nav .links a::after { content: ""; position: absolute; left: 0; bottom: -3px; width: 0; height: 1.5px; background: var(--brass); transition: width 0.3s var(--ease); }
+  .nav .links a:hover { color: var(--ink); }
+  .nav .links a:hover::after { width: 100%; }
+
+  /* ---------------- hero ---------------- */
+  .hero { position: relative; background: var(--navy); color: var(--hero-ink); overflow: hidden; }
+  .hero::after { content: ""; position: absolute; inset: 0; background: radial-gradient(90% 70% at 88% -8%, rgba(228,161,59,0.16), transparent 58%); pointer-events: none; }
+  .hero .wrap { display: grid; grid-template-columns: 1.08fr 0.92fr; gap: clamp(2rem, 5vw, 4.5rem); align-items: center; padding: clamp(3.4rem, 8vw, 6.5rem) 0 clamp(3.4rem, 7vw, 6rem); }
+  .hero .kicker { color: var(--hero-muted); }
+  .hero h1 { font-size: clamp(2.5rem, 1.4rem + 4.4vw, 4.6rem); font-weight: 400; letter-spacing: -0.02em; margin-top: 1.4rem; }
+  .hero h1 em { font-style: italic; color: var(--brass); font-weight: 400; }
+  .hero .lede { color: var(--hero-muted); font-size: clamp(1.02rem, 0.95rem + 0.45vw, 1.22rem); line-height: 1.55; margin-top: 1.5rem; max-width: 40ch; }
+  .hero .cta-row { display: flex; flex-wrap: wrap; gap: 0.85rem; margin-top: 2.2rem; }
+  .hero .btn.ghost { color: var(--hero-ink); border-color: rgba(255,255,255,0.24); }
+  .hero .btn.ghost:hover { border-color: var(--brass); }
+  .hero .meta { display: flex; flex-wrap: wrap; gap: 1.5rem; margin-top: 2.6rem; padding-top: 1.7rem; border-top: 1px solid rgba(255,255,255,0.12); }
+  .hero .meta div { min-width: 0; }
+  .hero .meta dt { font-family: var(--f-serif); font-size: 1.55rem; color: var(--hero-ink); font-weight: 500; }
+  .hero .meta dd { margin: 2px 0 0; font-size: 0.76rem; letter-spacing: 0.06em; color: var(--hero-muted); text-transform: uppercase; font-weight: 600; }
+
+  /* hero visual plate */
+  .plate { position: relative; aspect-ratio: 4 / 4.7; border-radius: var(--radius-lg); overflow: hidden; background: linear-gradient(155deg, #22364F 0%, #16233A 60%, #101B2C 100%); box-shadow: var(--shadow); }
+  .plate .frame { position: absolute; inset: 14px; border: 1px solid rgba(228,161,59,0.42); border-radius: 4px; z-index: 3; pointer-events: none; }
+  .plate .pat { position: absolute; inset: 0; z-index: 1; }
+  .plate .mrkmark { position: absolute; z-index: 2; }
+  .swatches { position: absolute; left: 28px; right: 28px; bottom: 26px; z-index: 3; display: flex; gap: 10px; }
+  .swatches i { flex: 1; height: 46px; border-radius: 3px; border: 1px solid rgba(255,255,255,0.14); box-shadow: 0 8px 18px -10px rgba(0,0,0,0.5); }
+  .sw-oak { background: linear-gradient(135deg, #C69B6D, #9A6E42); }
+  .sw-stone { background: linear-gradient(135deg, #D7D3CA, #A7A69F); }
+  .sw-brass { background: linear-gradient(135deg, #E9B155, #C9861F); }
+  .sw-navy { background: linear-gradient(135deg, #2C4468, #17253B); }
+  .plate .cnr { position: absolute; z-index: 3; width: 34px; height: 1px; background: var(--brass); }
+
+  /* ---------------- section frame ---------------- */
+  section { padding: clamp(3.6rem, 7vw, 6rem) 0; position: relative; }
+  .sec-head { max-width: 62ch; margin-bottom: clamp(2rem, 4vw, 3rem); }
+  .sec-head h2 { font-size: clamp(1.9rem, 1.3rem + 2.4vw, 3rem); font-weight: 500; margin-top: 1rem; }
+  .sec-head h2 em { font-style: italic; color: var(--brass-600); }
+  @media (prefers-color-scheme: dark){ .sec-head h2 em { color: var(--brass); } }
+  :root[data-theme="dark"] .sec-head h2 em { color: var(--brass); }
+  .sec-head p { color: var(--muted); font-size: 1.06rem; margin-top: 0.9rem; }
+
+  html.js .reveal { opacity: 0; transform: translateY(20px); transition: opacity 0.8s var(--ease), transform 0.8s var(--ease); }
+  .reveal.in { opacity: 1; transform: none; }
+
+  /* ---------------- usługi ---------------- */
+  .services { display: grid; grid-template-columns: repeat(4, 1fr); gap: 0; border: 1px solid var(--line); border-radius: var(--radius-lg); overflow: hidden; background: var(--surface); }
+  .svc { padding: 1.9rem 1.6rem 2rem; border-right: 1px solid var(--line); display: flex; flex-direction: column; gap: 0.7rem; transition: background 0.3s ease; position: relative; }
+  .svc:last-child { border-right: none; }
+  .svc:hover { background: var(--surface-2); }
+  .svc .num { font-family: var(--f-serif); font-size: 0.85rem; color: var(--brass-600); font-weight: 600; letter-spacing: 0.05em; }
+  @media (prefers-color-scheme: dark){ .svc .num { color: var(--brass); } }
+  :root[data-theme="dark"] .svc .num { color: var(--brass); }
+  .svc .ic { width: 34px; height: 34px; margin: 0.3rem 0 0.2rem; }
+  .svc .ic svg { width: 100%; height: 100%; stroke: var(--brass-600); fill: none; stroke-width: 1.5; stroke-linecap: round; stroke-linejoin: round; }
+  @media (prefers-color-scheme: dark){ .svc .ic svg { stroke: var(--brass); } }
+  :root[data-theme="dark"] .svc .ic svg { stroke: var(--brass); }
+  .svc h3 { font-size: 1.16rem; font-weight: 500; }
+  .svc p { color: var(--muted); font-size: 0.93rem; line-height: 1.55; }
+
+  /* ---------------- realizacje ---------------- */
+  #realizacje { background: var(--surface-2); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+  .projects { display: grid; grid-template-columns: 1fr 1fr; gap: 1.6rem; }
+  .project { display: flex; flex-direction: column; gap: 1.2rem; }
+  .project .plate2 { position: relative; aspect-ratio: 3 / 2.15; border-radius: var(--radius-lg); overflow: hidden; box-shadow: var(--shadow-sm); transition: transform 0.5s var(--ease), box-shadow 0.5s var(--ease); }
+  .project:hover .plate2 { transform: translateY(-5px); box-shadow: var(--shadow); }
+  .plate2 .pat { position: absolute; inset: 0; transition: transform 0.7s var(--ease); }
+  .project:hover .plate2 .pat { transform: scale(1.05); }
+  .plate2 .frm { position: absolute; inset: 13px; border: 1px solid rgba(228,161,59,0.4); border-radius: 4px; z-index: 3; }
+  .plate2 .idx { position: absolute; top: 18px; left: 22px; z-index: 4; font-family: var(--f-serif); font-size: 2.3rem; color: rgba(243,239,231,0.9); line-height: 1; }
+  .plate2 .tag { position: absolute; top: 22px; right: 22px; z-index: 4; font-family: var(--f-sans); font-size: 0.62rem; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; color: var(--hero-ink); background: rgba(11,18,28,0.42); backdrop-filter: blur(4px); border: 1px solid rgba(228,161,59,0.45); padding: 0.35rem 0.7rem; border-radius: 999px; }
+  .plate2 .pname { position: absolute; left: 22px; bottom: 20px; z-index: 4; }
+  .plate2 .pname .t { font-family: var(--f-serif); font-size: 1.7rem; font-style: italic; color: var(--hero-ink); font-weight: 500; }
+  .plate2 .pname .s { display: block; font-family: var(--f-sans); font-size: 0.74rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--hero-muted); margin-top: 4px; font-weight: 600; }
+  .project .desc { color: var(--muted); font-size: 0.98rem; }
+  .project .rows { display: flex; flex-direction: column; gap: 0; border-top: 1px solid var(--line); }
+  .project .rows .r { display: flex; justify-content: space-between; align-items: baseline; padding: 0.62rem 0; border-bottom: 1px solid var(--line); font-size: 0.9rem; }
+  .project .rows .r dt { color: var(--steel); text-transform: uppercase; letter-spacing: 0.1em; font-size: 0.72rem; font-weight: 700; }
+  .project .rows .r dd { margin: 0; font-weight: 600; color: var(--ink); }
+  .photo-hint { font-size: 0.78rem; color: var(--steel); font-style: italic; }
+
+  /* ---------------- o firmie ---------------- */
+  .about { display: grid; grid-template-columns: 0.82fr 1.18fr; gap: clamp(2rem, 5vw, 3.6rem); align-items: center; }
+  .portrait { position: relative; aspect-ratio: 4/5; border-radius: var(--radius-lg); overflow: hidden; background: linear-gradient(158deg, #24384F 0%, #14233A 100%); box-shadow: var(--shadow); }
+  .portrait .frm { position: absolute; inset: 14px; border: 1px solid rgba(228,161,59,0.4); border-radius: 4px; z-index: 3; }
+  .portrait .mono { position: absolute; inset: 0; display: grid; place-items: center; z-index: 2; }
+  .portrait .mono span { font-family: var(--f-serif); font-style: italic; font-weight: 500; font-size: clamp(3rem, 9vw, 4.4rem); color: rgba(243,239,231,0.92); }
+  .portrait .cap { position: absolute; left: 0; right: 0; bottom: 0; z-index: 3; padding: 0.8rem 1rem; text-align: center; background: linear-gradient(0deg, rgba(11,18,28,0.6), transparent); color: var(--hero-ink); font-size: 0.64rem; letter-spacing: 0.18em; text-transform: uppercase; font-weight: 700; }
+  .about-body h2 { font-size: clamp(1.7rem, 1.2rem + 1.9vw, 2.6rem); font-weight: 500; margin-top: 1rem; }
+  .about-body h2 em { font-style: italic; color: var(--brass-600); }
+  @media (prefers-color-scheme: dark){ .about-body h2 em { color: var(--brass); } }
+  :root[data-theme="dark"] .about-body h2 em { color: var(--brass); }
+  .about-body > p { color: var(--muted); margin-top: 1rem; max-width: 54ch; }
+  .about-body ul { list-style: none; padding: 0; margin: 1.5rem 0 0; display: grid; gap: 0.8rem; }
+  .about-body li { display: flex; align-items: flex-start; gap: 0.7rem; font-size: 0.98rem; }
+  .about-body li svg { width: 21px; height: 21px; flex: none; margin-top: 3px; stroke: var(--brass-600); fill: none; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+  @media (prefers-color-scheme: dark){ .about-body li svg { stroke: var(--brass); } }
+  :root[data-theme="dark"] .about-body li svg { stroke: var(--brass); }
+  .about-body .sig { display: flex; align-items: center; gap: 0.9rem; margin-top: 1.8rem; padding-top: 1.4rem; border-top: 1px solid var(--line); }
+  .about-body .sig b { font-family: var(--f-serif); font-weight: 600; font-size: 1.05rem; color: var(--ink); }
+  .about-body .sig small { display: block; color: var(--steel); font-size: 0.82rem; }
+
+  /* ---------------- proces ---------------- */
+  #proces { background: var(--surface-2); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+  .steps { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.4rem; counter-reset: st; }
+  .step { position: relative; padding-top: 2.4rem; }
+  .step::before { content: ""; position: absolute; top: 12px; left: 0; right: 0; height: 1px; background: var(--line); }
+  .step::after { content: ""; position: absolute; top: 8px; left: 0; width: 9px; height: 9px; border-radius: 50%; background: var(--brass); box-shadow: 0 0 0 4px var(--surface-2); }
+  .step .no { font-family: var(--f-serif); font-size: 0.8rem; color: var(--brass-600); font-weight: 600; letter-spacing: 0.14em; }
+  @media (prefers-color-scheme: dark){ .step .no { color: var(--brass); } }
+  :root[data-theme="dark"] .step .no { color: var(--brass); }
+  .step h3 { font-size: 1.18rem; font-weight: 500; margin-top: 0.5rem; }
+  .step p { color: var(--muted); font-size: 0.92rem; margin-top: 0.5rem; line-height: 1.55; }
+
+  /* ---------------- kontakt ---------------- */
+  #kontakt { background: var(--navy); color: var(--hero-ink); position: relative; overflow: hidden; }
+  #kontakt::after { content: ""; position: absolute; inset: 0; background: radial-gradient(80% 80% at 12% 110%, rgba(228,161,59,0.15), transparent 60%); pointer-events: none; }
+  #kontakt .grid { display: grid; grid-template-columns: 1.05fr 0.95fr; gap: clamp(2rem, 5vw, 4rem); align-items: center; }
+  #kontakt h2 { font-size: clamp(1.9rem, 1.3rem + 2.2vw, 3rem); font-weight: 400; }
+  #kontakt h2 em { font-style: italic; color: var(--brass); }
+  #kontakt .sub { color: var(--hero-muted); margin-top: 1rem; max-width: 42ch; }
+  .contact-list { display: flex; flex-direction: column; gap: 0.8rem; }
+  .contact-list a { display: flex; align-items: center; gap: 1rem; text-decoration: none; color: var(--hero-ink); padding: 1rem 1.2rem; border: 1px solid rgba(255,255,255,0.15); border-radius: var(--radius); background: rgba(255,255,255,0.03); transition: border-color 0.3s var(--ease), background 0.3s var(--ease), transform 0.3s var(--ease); }
+  .contact-list a:hover { border-color: var(--brass); background: rgba(228,161,59,0.08); transform: translateX(4px); }
+  .contact-list .ci { width: 38px; height: 38px; flex: none; border-radius: var(--radius); background: rgba(228,161,59,0.14); display: grid; place-items: center; }
+  .contact-list .ci svg { width: 19px; height: 19px; stroke: var(--brass); fill: none; stroke-width: 1.7; stroke-linecap: round; stroke-linejoin: round; }
+  .contact-list .tx b { font-weight: 700; font-size: 1.02rem; }
+  .contact-list .tx small { display: block; color: var(--hero-muted); font-size: 0.72rem; letter-spacing: 0.09em; text-transform: uppercase; margin-top: 2px; font-weight: 600; }
+
+  /* ---------------- footer ---------------- */
+  footer.site { background: var(--paper); padding: 2.4rem 0; }
+  footer.site .row { display: flex; flex-wrap: wrap; align-items: center; gap: 1rem 1.6rem; justify-content: space-between; color: var(--muted); font-size: 0.85rem; }
+  footer.site .fb { display: flex; align-items: center; gap: 0.6rem; }
+  footer.site .fb b { font-family: var(--f-serif); font-weight: 600; color: var(--ink); }
+  footer.site .ftag { color: var(--steel); letter-spacing: 0.2em; text-transform: uppercase; font-size: 0.68rem; font-weight: 700; }
+
+  :focus-visible { outline: 2px solid var(--brass); outline-offset: 3px; border-radius: 3px; }
+
+  /* ---------------- responsive ---------------- */
+  @media (max-width: 940px) {
+    .hero .wrap { grid-template-columns: 1fr; gap: 2.4rem; }
+    .hero-art { order: -1; max-width: 400px; }
+    .services { grid-template-columns: 1fr 1fr; }
+    .svc:nth-child(2) { border-right: none; }
+    .svc:nth-child(1), .svc:nth-child(2) { border-bottom: 1px solid var(--line); }
+    .projects { grid-template-columns: 1fr; }
+    .about { grid-template-columns: 1fr; }
+    .portrait { max-width: 320px; }
+    .steps { grid-template-columns: 1fr 1fr; row-gap: 2.2rem; }
+    #kontakt .grid { grid-template-columns: 1fr; }
+    .nav .links { display: none; }
+  }
+  @media (max-width: 540px) {
+    body { font-size: 16px; }
+    .services { grid-template-columns: 1fr; }
+    .svc { border-right: none; border-bottom: 1px solid var(--line); }
+    .svc:last-child { border-bottom: none; }
+    .steps { grid-template-columns: 1fr; }
+    .hero .meta dt { font-size: 1.3rem; }
+  }
+</style>
+</head>
+<body>
+<header class="site">
+  <div class="wrap nav">
+    <a class="brand" href="#top" aria-label="MRK Remonty">
+      <svg class="mark" viewBox="0 0 64 64" role="img" aria-hidden="true">
+        <rect x="2" y="2" width="60" height="60" rx="13" fill="#17253B"/>
+        <path d="M14 31 L32 18.5 L50 31" fill="none" stroke="#E4A13B" stroke-width="4.2" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M44.5 24.7 L44.5 19.4" stroke="#E4A13B" stroke-width="4.2" stroke-linecap="round"/>
+        <text x="32" y="48.5" text-anchor="middle" font-family="Georgia, serif" font-weight="700" font-size="16.5" fill="#F3EFE7" letter-spacing="0.5">MRK</text>
+      </svg>
+      <span class="wm"><b>MRK <i>Remonty</i></b><small>Mieszkanie · Remont · Kraków</small></span>
+    </a>
+    <nav class="links" aria-label="Nawigacja">
+      <a href="#uslugi">Zakres</a>
+      <a href="#realizacje">Realizacje</a>
+      <a href="#ofirmie">O firmie</a>
+      <a href="#proces">Proces</a>
+      <a href="#kontakt">Kontakt</a>
+    </nav>
+    <a class="btn" href="mailto:mieszkanie.remont.krakow@gmail.com?subject=Wycena%20remontu">Umów wycenę</a>
+  </div>
+</header>
+
+<main id="top">
+  <!-- HERO -->
+  <section class="hero">
+    <div class="wrap">
+      <div class="hero-copy">
+        <span class="eyebrow kicker on-navy reveal">Kraków i okolice · wykańczanie wnętrz</span>
+        <h1 class="reveal">Kompleksowe wykańczanie wnętrz <em>pod klucz.</em></h1>
+        <p class="lede reveal">Prowadzimy wnętrze od pustych ścian do gotowego odbioru. Wykończenie, metamorfoza pod sprzedaż i home staging pod wynajem. Jeden wykonawca, jedna odpowiedzialność.</p>
+        <div class="cta-row reveal">
+          <a class="btn" href="mailto:mieszkanie.remont.krakow@gmail.com?subject=Wycena%20remontu">Umów wycenę</a>
+          <a class="btn ghost" href="#realizacje">Zobacz realizacje</a>
+        </div>
+        <dl class="meta reveal">
+          <div><dt>Pod klucz</dt><dd>Pełen zakres prac</dd></div>
+          <div><dt>1 kontakt</dt><dd>Na cały projekt</dd></div>
+          <div><dt>Kraków</dt><dd>I okolice</dd></div>
+        </dl>
+      </div>
+      <div class="hero-art reveal">
+        <div class="plate">
+          <svg class="pat" viewBox="0 0 400 470" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+            <defs>
+              <pattern id="herr" width="46" height="46" patternUnits="userSpaceOnUse" patternTransform="rotate(0)">
+                <path d="M0 23 L23 0 L46 23 M0 46 L23 23 L46 46" fill="none" stroke="rgba(228,161,59,0.13)" stroke-width="1.4"/>
+              </pattern>
+            </defs>
+            <rect width="400" height="470" fill="url(#herr)"/>
+          </svg>
+          <span class="cnr" style="top:14px;left:14px;"></span>
+          <span class="cnr" style="top:14px;right:14px;"></span>
+          <svg class="mrkmark" viewBox="0 0 200 130" width="52%" style="top:24%;left:24%;" aria-hidden="true">
+            <path d="M20 96 L100 34 L180 96" fill="none" stroke="#E4A13B" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M150 68 L150 40" stroke="#E4A13B" stroke-width="4.5" stroke-linecap="round"/>
+            <text x="100" y="122" text-anchor="middle" font-family="Georgia, serif" font-weight="700" font-size="30" fill="rgba(243,239,231,0.94)" letter-spacing="2">MRK</text>
+          </svg>
+          <div class="frame"></div>
+          <div class="swatches" aria-hidden="true">
+            <i class="sw-oak"></i><i class="sw-stone"></i><i class="sw-brass"></i><i class="sw-navy"></i>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- USŁUGI -->
+  <section id="uslugi">
+    <div class="wrap">
+      <div class="sec-head reveal">
+        <span class="eyebrow">Zakres</span>
+        <h2>Cztery rzeczy, które bierzemy <em>w całości.</em></h2>
+        <p>Jeden wykonawca prowadzi projekt od wyceny do odbioru. Ty nie zbierasz ekip i nie pilnujesz kolejności prac.</p>
+      </div>
+      <div class="services reveal">
+        <div class="svc">
+          <span class="num">01</span>
+          <div class="ic"><svg viewBox="0 0 24 24"><path d="M3 21h18M5 21V9l7-5 7 5v12M9 21v-5h6v5"/></svg></div>
+          <h3>Remont pod klucz</h3>
+          <p>Od skucia i instalacji po malowanie i montaż. Oddajemy wnętrze gotowe do wejścia.</p>
+        </div>
+        <div class="svc">
+          <span class="num">02</span>
+          <div class="ic"><svg viewBox="0 0 24 24"><path d="M14 3l7 7-4 4-7-7zM10 7L3 14v7h7l7-7"/></svg></div>
+          <h3>Wykończenia</h3>
+          <p>Stan deweloperski zamieniamy w skończone wnętrze. Podłogi, glazura, oświetlenie, drzwi.</p>
+        </div>
+        <div class="svc">
+          <span class="num">03</span>
+          <div class="ic"><svg viewBox="0 0 24 24"><path d="M3 9l9-6 9 6v11a1 1 0 01-1 1H4a1 1 0 01-1-1zM9 21v-8h6v8"/></svg></div>
+          <h3>Home staging</h3>
+          <p>Przygotowanie pod sprzedaż lub wynajem. Metamorfoza, która skraca czas na rynku.</p>
+        </div>
+        <div class="svc">
+          <span class="num">04</span>
+          <div class="ic"><svg viewBox="0 0 24 24"><path d="M9 11l3 3L22 4M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11"/></svg></div>
+          <h3>Koordynacja</h3>
+          <p>Harmonogram, dostawcy, materiały i kontrola jakości. Jeden kontakt na cały projekt.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- REALIZACJE -->
+  <section id="realizacje">
+    <div class="wrap">
+      <div class="sec-head reveal">
+        <span class="eyebrow">Realizacje</span>
+        <h2>Dwa projekty, <em>dwa różne cele.</em></h2>
+        <p>Jeden pod sprzedaż w krakowskiej kamienicy, drugi jako wykończenie mieszkania nad morzem.</p>
+      </div>
+      <div class="projects">
+        <!-- 01 Bochenka -->
+        <article class="project reveal">
+          <div class="plate2">
+            <svg class="pat" viewBox="0 0 400 268" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+              <rect width="400" height="268" fill="#1B2E48"/>
+              <defs>
+                <pattern id="herr2" width="52" height="52" patternUnits="userSpaceOnUse">
+                  <path d="M0 26 L26 0 L52 26 M0 52 L26 26 L52 52" fill="none" stroke="rgba(228,161,59,0.16)" stroke-width="1.4"/>
+                </pattern>
+              </defs>
+              <rect width="400" height="268" fill="url(#herr2)"/>
+              <rect width="400" height="268" fill="url(#g1)"/>
+              <defs><linearGradient id="g1" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="rgba(20,32,47,0)"/><stop offset="1" stop-color="rgba(16,25,40,0.72)"/></linearGradient></defs>
+            </svg>
+            <span class="idx">01</span>
+            <span class="tag">Kraków · sprzedaż</span>
+            <div class="pname"><span class="t">Bochenka</span><span class="s">Kamienica · metamorfoza</span></div>
+            <div class="frm"></div>
+          </div>
+          <p class="desc">Mieszkanie w kamienicy doprowadzone do stanu gotowego do sprzedaży. Metamorfoza, wykończenie i home staging w jednym prowadzeniu.</p>
+          <dl class="rows">
+            <div class="r"><dt>Zakres</dt><dd>Pod klucz</dd></div>
+            <div class="r"><dt>Cel</dt><dd>Sprzedaż</dd></div>
+            <div class="r"><dt>Lokalizacja</dt><dd>Kraków</dd></div>
+          </dl>
+          <p class="photo-hint">Miejsce na zdjęcia z realizacji.</p>
+        </article>
+        <!-- 02 Nad morzem -->
+        <article class="project reveal">
+          <div class="plate2">
+            <svg class="pat" viewBox="0 0 400 268" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+              <rect width="400" height="268" fill="#16323A"/>
+              <g fill="none" stroke="rgba(228,161,59,0.16)" stroke-width="1.5">
+                <path d="M-10 60 q40 -16 80 0 t80 0 t80 0 t80 0 t80 0 t80 0"/>
+                <path d="M-10 96 q40 -16 80 0 t80 0 t80 0 t80 0 t80 0 t80 0 t80 0"/>
+                <path d="M-10 132 q40 -16 80 0 t80 0 t80 0 t80 0 t80 0 t80 0 t80 0"/>
+                <path d="M-10 168 q40 -16 80 0 t80 0 t80 0 t80 0 t80 0 t80 0 t80 0"/>
+                <path d="M-10 204 q40 -16 80 0 t80 0 t80 0 t80 0 t80 0 t80 0 t80 0"/>
+              </g>
+              <circle cx="320" cy="58" r="26" fill="rgba(228,161,59,0.85)"/>
+              <rect width="400" height="268" fill="url(#g2)"/>
+              <defs><linearGradient id="g2" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="rgba(16,25,40,0)"/><stop offset="1" stop-color="rgba(11,22,30,0.74)"/></linearGradient></defs>
+            </svg>
+            <span class="idx">02</span>
+            <span class="tag">Wybrzeże · wynajem</span>
+            <div class="pname"><span class="t">Mieszkanie nad morzem</span><span class="s">Inwestycja · wykończenie</span></div>
+            <div class="frm"></div>
+          </div>
+          <p class="desc">Wykończenie mieszkania w nadmorskiej inwestycji. Przygotowane pod wypoczynek i wynajem, z materiałami odpornymi na wilgoć.</p>
+          <dl class="rows">
+            <div class="r"><dt>Zakres</dt><dd>Wykończenie</dd></div>
+            <div class="r"><dt>Cel</dt><dd>Wynajem</dd></div>
+            <div class="r"><dt>Lokalizacja</dt><dd>Wybrzeże</dd></div>
+          </dl>
+          <p class="photo-hint">Miejsce na zdjęcia z realizacji.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- O FIRMIE -->
+  <section id="ofirmie">
+    <div class="wrap about">
+      <div class="portrait reveal">
+        <div class="mono"><span>GW</span></div>
+        <div class="frm"></div>
+        <div class="cap">Osoba prowadząca projekty</div>
+      </div>
+      <div class="about-body reveal">
+        <span class="eyebrow">O firmie</span>
+        <h2>Jeden wykonawca, który bierze <em>odpowiedzialność za całość.</em></h2>
+        <p>MRK Remonty to kompleksowe wykańczanie wnętrz w Krakowie i okolicach. Zamiast składać ekipę z kilku firm, oddajesz projekt jednej osobie, która prowadzi go od wyceny do odbioru.</p>
+        <ul>
+          <li><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg><span>Jeden kontakt na cały remont, zero przerzucania odpowiedzialności.</span></li>
+          <li><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg><span>Wycena po oględzinach i jasny zakres, bez pozycji dopisywanych po drodze.</span></li>
+          <li><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg><span>Terminy ustalone pisemnie i kontrola jakości na każdym etapie.</span></li>
+        </ul>
+        <div class="sig">
+          <div><b>Gabriela Wywrocka</b><small>Koordynacja projektów · MRK Remonty</small></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROCES -->
+  <section id="proces">
+    <div class="wrap">
+      <div class="sec-head reveal">
+        <span class="eyebrow">Proces</span>
+        <h2>Cztery kroki. Wiesz <em>na czym stoisz</em> na każdym.</h2>
+      </div>
+      <div class="steps reveal">
+        <div class="step"><span class="no">Krok 01</span><h3>Oględziny</h3><p>Oglądamy wnętrze, słuchamy celu. Sprzedaż, wynajem czy wprowadzenie się.</p></div>
+        <div class="step"><span class="no">Krok 02</span><h3>Wycena i zakres</h3><p>Dostajesz wycenę po oględzinach i jasny zakres prac. Bez ukrytych pozycji.</p></div>
+        <div class="step"><span class="no">Krok 03</span><h3>Remont</h3><p>Prowadzimy prace w kolejności i pilnujemy jakości. Ty masz jeden kontakt.</p></div>
+        <div class="step"><span class="no">Krok 04</span><h3>Odbiór</h3><p>Oddajemy gotowe wnętrze. Pod klucz albo od razu gotowe na rynek.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- KONTAKT -->
+  <section id="kontakt">
+    <div class="wrap">
+      <div class="grid">
+        <div class="reveal">
+          <span class="eyebrow on-navy">Kontakt</span>
+          <h2>Powiedz, co masz do zrobienia. <em>Odezwiemy się z wyceną.</em></h2>
+          <p class="sub">Najszybciej mailem, z krótkim opisem wnętrza i celem remontu. Działamy w Krakowie i okolicach.</p>
+        </div>
+        <div class="contact-list reveal">
+          <a href="mailto:mieszkanie.remont.krakow@gmail.com?subject=Wycena%20remontu">
+            <span class="ci"><svg viewBox="0 0 24 24"><path d="M3 5h18v14H3zM3 6l9 7 9-7"/></svg></span>
+            <span class="tx"><b>mieszkanie.remont.krakow@gmail.com</b><small>E-mail</small></span>
+          </a>
+          <a href="tel:+48535769700">
+            <span class="ci"><svg viewBox="0 0 24 24"><path d="M5 4h4l2 5-3 2a12 12 0 006 6l2-3 5 2v4a2 2 0 01-2 2A17 17 0 013 6a2 2 0 012-2"/></svg></span>
+            <span class="tx"><b>+48 535 769 700</b><small>Telefon</small></span>
+          </a>
+          <a href="#realizacje">
+            <span class="ci"><svg viewBox="0 0 24 24"><path d="M12 21s-7-5-9-9a5 5 0 019-3 5 5 0 019 3c-2 4-9 9-9 9z"/></svg></span>
+            <span class="tx"><b>Kraków i okolice</b><small>Obszar działania</small></span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="site">
+  <div class="wrap row">
+    <div class="fb">
+      <svg viewBox="0 0 64 64" width="30" height="30" role="img" aria-label="MRK Remonty">
+        <rect x="2" y="2" width="60" height="60" rx="13" fill="#17253B"/>
+        <path d="M14 31 L32 18.5 L50 31" fill="none" stroke="#E4A13B" stroke-width="4.2" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M44.5 24.7 L44.5 19.4" stroke="#E4A13B" stroke-width="4.2" stroke-linecap="round"/>
+        <text x="32" y="48.5" text-anchor="middle" font-family="Georgia, serif" font-weight="700" font-size="16.5" fill="#F3EFE7">MRK</text>
+      </svg>
+      <b>MRK Remonty</b>
+    </div>
+    <div class="ftag">Mieszkanie · Remont · Kraków</div>
+    <div>© 2026 MRK Remonty · Kraków i okolice</div>
+  </div>
+</footer>
+
+<script>
+  (function () {
+    var reduce = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    var els = document.querySelectorAll(".reveal");
+    if (reduce || !("IntersectionObserver" in window)) {
+      els.forEach(function (e) { e.classList.add("in"); });
+      return;
+    }
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (en) {
+        if (en.isIntersecting) { en.target.classList.add("in"); io.unobserve(en.target); }
+      });
+    }, { threshold: 0.12, rootMargin: "0px 0px -8% 0px" });
+    els.forEach(function (e) { io.observe(e); });
+  })();
+</script>
+
+</body>
+</html>
