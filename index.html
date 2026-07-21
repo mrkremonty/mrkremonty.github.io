@@ -7,7 +7,7 @@
 <meta name="theme-color" content="#17253B">
 <meta property="og:title" content="MRK Remonty — kompleksowe wykańczanie wnętrz, Kraków">
 <meta property="og:description" content="Wnętrze od pustych ścian do gotowego odbioru. Realizacja Bochenka. Kraków i okolice.">
-<meta property="og:image" content="mrk-hero.jpg">
+<meta property="og:image" content="mrk-przedpo.jpg">
 <meta property="og:type" content="website">
 <style>html,body{margin:0}img,svg{max-width:100%}</style>
 <title>MRK Remonty — kompleksowe wykańczanie wnętrz, Kraków</title>
@@ -232,6 +232,12 @@
   .project .rows .r dd { margin: 0; font-weight: 600; color: var(--ink); }
   .photo-hint { font-size: 0.78rem; color: var(--steel); font-style: italic; }
 
+  /* ---------------- przed/po ---------------- */
+  .ba-wrap { position: relative; border-radius: var(--radius-lg); overflow: hidden; box-shadow: var(--shadow); }
+  .ba-wrap img { width: 100%; height: auto; display: block; }
+  .ba-wrap::after { content: ""; position: absolute; inset: 0; border: 1px solid rgba(228,161,59,0.3); border-radius: var(--radius-lg); pointer-events: none; }
+  .ba-note { margin-top: 0.9rem; font-size: 0.8rem; color: var(--steel); font-style: italic; }
+
   /* ---------------- galeria ---------------- */
   #galeria { background: var(--surface-2); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
   .gallery { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; }
@@ -340,6 +346,7 @@
     <nav class="links" aria-label="Nawigacja">
       <a href="#uslugi">Zakres</a>
       <a href="#realizacje">Realizacje</a>
+      <a href="#przedpo">Przed / Po</a>
       <a href="#galeria">Galeria</a>
       <a href="#ofirmie">O firmie</a>
       <a href="#proces">Proces</a>
@@ -462,6 +469,21 @@
           <p class="photo-hint">Wizualizacja poglądowa.</p>
         </article>
       </div>
+    </div>
+  </section>
+
+  <!-- PRZED / PO -->
+  <section id="przedpo">
+    <div class="wrap">
+      <div class="sec-head reveal">
+        <span class="eyebrow">Metamorfoza</span>
+        <h2>Z tego robimy <em>to.</em></h2>
+        <p>Po lewej stan zastany. Po prawej projekt tego samego pomieszczenia — tak planujemy wnętrze, zanim ruszy remont.</p>
+      </div>
+      <div class="ba-wrap reveal">
+        <img src="mrk-przedpo.jpg" loading="lazy" alt="Przed i po: stan zastany pokoju obok wizualizacji tego samego pomieszczenia po remoncie">
+      </div>
+      <p class="ba-note reveal">Po lewej: zdjęcie stanu zastanego. Po prawej: wizualizacja projektowa.</p>
     </div>
   </section>
 
