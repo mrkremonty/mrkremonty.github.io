@@ -253,10 +253,44 @@
   @media (max-width: 880px) { .gallery { grid-template-columns: repeat(2, 1fr); } .gallery figure.tall { grid-row: span 1; aspect-ratio: 4 / 3; } }
   @media (max-width: 540px) { .gallery { grid-template-columns: 1fr; } }
 
+  /* ---------------- za kulisami (proces / dobór) ---------------- */
+  #zakulisami { background: var(--navy); color: var(--hero-ink); position: relative; overflow: hidden; }
+  #zakulisami::after { content: ""; position: absolute; inset: 0; background: radial-gradient(80% 70% at 90% -10%, rgba(228,161,59,0.13), transparent 58%); pointer-events: none; }
+  #zakulisami .sec-head h2 { color: var(--hero-ink); }
+  #zakulisami .sec-head h2 em { color: var(--brass); }
+  #zakulisami .sec-head p { color: var(--hero-muted); }
+  #zakulisami .eyebrow { color: var(--hero-muted); }
+  .bts { columns: 4; column-gap: 1rem; position: relative; z-index: 1; }
+  .bts figure { break-inside: avoid; margin: 0 0 1rem; position: relative; border-radius: var(--radius-lg); overflow: hidden; box-shadow: var(--shadow); background: #16233A; }
+  .bts img { width: 100%; display: block; transition: transform 0.55s var(--ease); }
+  .bts figure:hover img { transform: scale(1.04); }
+  .bts figure::after { content: ""; position: absolute; inset: 0; border: 1px solid rgba(228,161,59,0.28); border-radius: var(--radius-lg); pointer-events: none; }
+  .bts .step { position: absolute; top: 11px; left: 11px; z-index: 2; background: rgba(11,18,28,0.6); backdrop-filter: blur(4px); border: 1px solid rgba(228,161,59,0.5); color: #F3EFE7; font-size: 0.6rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; padding: 0.3rem 0.65rem; border-radius: 999px; }
+  @media (max-width: 940px) { .bts { columns: 3; } }
+  @media (max-width: 680px) { .bts { columns: 2; } }
+  @media (max-width: 460px) { .bts { columns: 1; } }
+
+  /* ---------------- faq ---------------- */
+  #faq { background: var(--surface-2); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+  .faq-list { max-width: 840px; display: grid; gap: 0.75rem; }
+  .faq-list details { background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius-lg); overflow: hidden; transition: border-color 0.25s ease; }
+  .faq-list details[open] { border-color: color-mix(in srgb, var(--brass) 45%, var(--line)); }
+  .faq-list summary { list-style: none; cursor: pointer; padding: 1.1rem 1.35rem; font-family: var(--f-serif); font-size: 1.14rem; font-weight: 500; color: var(--ink); display: flex; justify-content: space-between; align-items: center; gap: 1rem; }
+  .faq-list summary::-webkit-details-marker { display: none; }
+  .faq-list summary::after { content: "+"; font-family: var(--f-sans); font-weight: 600; font-size: 1.4rem; line-height: 1; color: var(--brass-600); flex: none; }
+  @media (prefers-color-scheme: dark) { .faq-list summary::after { color: var(--brass); } }
+  :root[data-theme="dark"] .faq-list summary::after { color: var(--brass); }
+  .faq-list details[open] summary::after { content: "\2212"; }
+  .faq-list summary:hover { color: var(--brass-600); }
+  @media (prefers-color-scheme: dark) { .faq-list summary:hover { color: var(--brass); } }
+  :root[data-theme="dark"] .faq-list summary:hover { color: var(--brass); }
+  .faq-list .a { padding: 0 1.35rem 1.25rem; color: var(--muted); font-size: 0.99rem; line-height: 1.62; max-width: 66ch; }
+
   /* ---------------- o firmie ---------------- */
   .about { display: grid; grid-template-columns: 0.82fr 1.18fr; gap: clamp(2rem, 5vw, 3.6rem); align-items: center; }
   .portrait { position: relative; aspect-ratio: 4/5; border-radius: var(--radius-lg); overflow: hidden; background: linear-gradient(158deg, #24384F 0%, #14233A 100%); box-shadow: var(--shadow); }
   .portrait .frm { position: absolute; inset: 14px; border: 1px solid rgba(228,161,59,0.4); border-radius: 4px; z-index: 3; }
+  .portrait .pp { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; z-index: 1; }
   .portrait .mono { position: absolute; inset: 0; display: grid; place-items: center; z-index: 2; }
   .portrait .mono span { font-family: var(--f-serif); font-style: italic; font-weight: 500; font-size: clamp(3rem, 9vw, 4.4rem); color: rgba(243,239,231,0.92); }
   .portrait .cap { position: absolute; left: 0; right: 0; bottom: 0; z-index: 3; padding: 0.8rem 1rem; text-align: center; background: linear-gradient(0deg, rgba(11,18,28,0.6), transparent); color: var(--hero-ink); font-size: 0.64rem; letter-spacing: 0.18em; text-transform: uppercase; font-weight: 700; }
@@ -353,6 +387,8 @@
       <a href="#galeria">Galeria</a>
       <a href="#ofirmie">O firmie</a>
       <a href="#proces">Proces</a>
+      <a href="#zakulisami">Za kulisami</a>
+      <a href="#faq">FAQ</a>
       <a href="#kontakt">Kontakt</a>
     </nav>
     <a class="btn" href="mailto:mieszkanie.remont.krakow@gmail.com?subject=Wycena%20remontu">Umów wycenę</a>
@@ -530,9 +566,9 @@
   <section id="ofirmie">
     <div class="wrap about">
       <div class="portrait reveal">
-        <div class="mono"><span>GW</span></div>
+        <img class="pp" src="mrk-portret.jpg" alt="Gabriela Wywrocka — prowadzi projekty MRK Remonty">
         <div class="frm"></div>
-        <div class="cap">Osoba prowadząca projekty</div>
+        <div class="cap">Gabriela Wywrocka · prowadzi projekty</div>
       </div>
       <div class="about-body reveal">
         <span class="eyebrow">O firmie</span>
@@ -562,6 +598,46 @@
         <div class="step"><span class="no">Krok 02</span><h3>Wycena i zakres</h3><p>Dostajesz wycenę po oględzinach i jasny zakres prac. Bez ukrytych pozycji.</p></div>
         <div class="step"><span class="no">Krok 03</span><h3>Remont</h3><p>Prowadzimy prace w kolejności i pilnujemy jakości. Ty masz jeden kontakt.</p></div>
         <div class="step"><span class="no">Krok 04</span><h3>Odbiór</h3><p>Oddajemy gotowe wnętrze. Pod klucz albo od razu gotowe na rynek.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ZA KULISAMI -->
+  <section id="zakulisami">
+    <div class="wrap">
+      <div class="sec-head reveal">
+        <span class="eyebrow">Za kulisami</span>
+        <h2>Zanim wejdzie ekipa, jest <em>robota.</em></h2>
+        <p>Pomiary, dobór materiałów, wyceny i rzuty — część pracy, której nie widać na zdjęciach gotowego wnętrza.</p>
+      </div>
+      <div class="bts reveal">
+        <figure><span class="step">Rzut i plan</span><img src="mrk-bts1.jpg" loading="lazy" alt="Rzut mieszkania z odręcznymi notatkami — planowanie remontu"></figure>
+        <figure><span class="step">Pomiary</span><img src="mrk-bts2.jpg" loading="lazy" alt="Pomiar grzejnika taśmą mierniczą"></figure>
+        <figure><span class="step">Dobór płytek</span><img src="mrk-bts3.jpg" loading="lazy" alt="Wybór płytek gresowych w sklepie"></figure>
+        <figure><span class="step">Dobór armatury</span><img src="mrk-bts4.jpg" loading="lazy" alt="Wybór baterii i deszczownic w showroomie"></figure>
+        <figure><span class="step">Wycena kuchni</span><img src="mrk-bts5.jpg" loading="lazy" alt="Kosztorys zabudowy kuchennej i sprzętu AGD"></figure>
+        <figure><span class="step">Dobór ceramiki</span><img src="mrk-bts6.jpg" loading="lazy" alt="Wybór miski WC i stelaża podtynkowego w sklepie"></figure>
+        <figure><span class="step">Dobór mebli</span><img src="mrk-bts7.jpg" loading="lazy" alt="Wybór szafki nocnej i lampy w salonie meblowym"></figure>
+        <figure><span class="step">W showroomie</span><img src="mrk-bts8.jpg" loading="lazy" alt="Aranżacja w salonie wystawowym"></figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section id="faq">
+    <div class="wrap">
+      <div class="sec-head reveal">
+        <span class="eyebrow">FAQ</span>
+        <h2>Pytania, które <em>słyszymy najczęściej.</em></h2>
+      </div>
+      <div class="faq-list reveal">
+        <details open><summary>Jak to wygląda z mojej strony?</summary><div class="a">Pokazujesz nam inspiracje — choćby tablicę na Pintereście — i mówisz, jaki masz budżet na całość. Resztą zajmujemy się my: projekt, materiały, wykonanie. W ustalonym terminie odbierasz klucze, wchodzisz z walizką i rozkładasz swoje szklanki. Nic więcej.</div></details>
+        <details><summary>Nie mam czasu na remont.</summary><div class="a">My mamy. I lubimy. Ty zajmij się swoim życiem — remont zdejmujemy z Twojej głowy w całości, od pierwszego pomiaru po rozłożone szklanki w szafce.</div></details>
+        <details><summary>Czym właściwie się zajmujecie?</summary><div class="a">Projektami, materiałami, wykonaniem i Twoim świętym spokojem. Jeden wykonawca prowadzi remont od wyceny do odbioru — nie zbierasz ekip i nie pilnujesz kolejności prac.</div></details>
+        <details><summary>Muszę się znać na remontach?</summary><div class="a">Nie. Wystarczy, że wiesz, co Ci się podoba i ile chcesz wydać. Dobór płytek, armatury, mebli i całą logistykę bierzemy na siebie.</div></details>
+        <details><summary>Skąd będę wiedzieć, ile to kosztuje?</summary><div class="a">Wycenę dostajesz po oględzinach, z jasnym zakresem prac — bez pozycji dopisywanych po drodze. Pracujemy w ramach ustalonego budżetu.</div></details>
+        <details><summary>Ile trwa remont?</summary><div class="a">Termin ustalamy pisemnie na starcie i się go trzymamy. Na każdym etapie wiesz, na czym stoisz.</div></details>
+        <details><summary>Gdzie działacie?</summary><div class="a">Kraków i okolice. Wykańczamy też mieszkania pod wynajem nad morzem — jak apartament w Ustroniu Morskim.</div></details>
       </div>
     </div>
   </section>
