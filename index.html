@@ -305,6 +305,12 @@
   .portrait .mono { position: absolute; inset: 0; display: grid; place-items: center; z-index: 2; }
   .portrait .mono span { font-family: var(--f-serif); font-style: italic; font-weight: 500; font-size: clamp(3rem, 9vw, 4.4rem); color: rgba(243,239,231,0.92); }
   .portrait .cap { position: absolute; left: 0; right: 0; bottom: 0; z-index: 3; padding: 0.8rem 1rem; text-align: center; background: linear-gradient(0deg, rgba(11,18,28,0.6), transparent); color: var(--hero-ink); font-size: 0.64rem; letter-spacing: 0.18em; text-transform: uppercase; font-weight: 700; }
+  .portrait .brandplate { position: absolute; inset: 0; z-index: 2; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 0.4rem; text-align: center; padding: 1.5rem 1.5rem 3.2rem; }
+  .portrait .brandplate::before { content: ""; position: absolute; inset: 0; background: radial-gradient(62% 48% at 50% 40%, rgba(228,161,59,0.14), transparent 70%); pointer-events: none; }
+  .portrait .brandplate .bp-mark { width: clamp(92px, 30%, 132px); height: auto; margin-bottom: 0.55rem; filter: drop-shadow(0 3px 10px rgba(0,0,0,0.4)); position: relative; }
+  .portrait .brandplate .bp-wm { font-family: var(--f-serif); font-size: clamp(1.75rem, 5.5vw, 2.35rem); font-weight: 600; color: var(--hero-ink); line-height: 1.05; position: relative; }
+  .portrait .brandplate .bp-wm em { font-style: italic; color: var(--brass); }
+  .portrait .brandplate .bp-tag { font-size: 0.64rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--hero-muted); margin-top: 0.5rem; position: relative; }
   .about-body h2 { font-size: clamp(1.7rem, 1.2rem + 1.9vw, 2.6rem); font-weight: 500; margin-top: 1rem; }
   .about-body h2 em { font-style: italic; color: var(--brass-600); }
   @media (prefers-color-scheme: dark){ .about-body h2 em { color: var(--brass); } }
@@ -528,7 +534,14 @@
   <section id="ofirmie">
     <div class="wrap about">
       <div class="portrait reveal">
-        <img class="pp" src="mrk-portret.jpg" alt="Gabriela Wywrocka — prowadzi projekty MRK Remonty">
+        <div class="brandplate">
+          <svg class="bp-mark" viewBox="10 15 44 20" role="img" aria-label="Znak MRK Remonty">
+            <path d="M14 31 L32 18.5 L50 31" fill="none" stroke="#E4A13B" stroke-width="4.2" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M44.5 24.7 L44.5 19.4" stroke="#E4A13B" stroke-width="4.2" stroke-linecap="round"/>
+          </svg>
+          <div class="bp-wm">MRK <em>Remonty</em></div>
+          <div class="bp-tag">Kompleksowe wykańczanie wnętrz</div>
+        </div>
         <div class="frm"></div>
         <div class="cap">Gabriela Wywrocka · prowadzi projekty</div>
       </div>
