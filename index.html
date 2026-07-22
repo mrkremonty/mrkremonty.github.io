@@ -135,7 +135,7 @@
     backdrop-filter: blur(14px) saturate(1.2);
     border-bottom: 1px solid var(--line-soft);
   }
-  .nav { display: flex; align-items: center; gap: 1.6rem; padding: 0.9rem 0; }
+  .nav { display: flex; align-items: center; gap: 1.1rem; padding: 0.9rem 0; }
   .brand { display: flex; align-items: center; gap: 0.7rem; text-decoration: none; margin-right: auto; }
   .brand .mark { width: 38px; height: 38px; flex: none; }
   .brand .wm { display: flex; flex-direction: column; line-height: 1.05; }
@@ -144,8 +144,8 @@
   @media (prefers-color-scheme: dark){ .brand .wm b i { color: var(--brass); } }
   :root[data-theme="dark"] .brand .wm b i { color: var(--brass); }
   .brand .wm small { font-family: var(--f-sans); font-size: 0.56rem; font-weight: 700; letter-spacing: 0.28em; text-transform: uppercase; color: var(--steel); margin-top: 3px; }
-  .nav .links { display: flex; gap: 1.7rem; }
-  .nav .links a { text-decoration: none; color: var(--muted); font-size: 0.9rem; font-weight: 600; position: relative; padding: 2px 0; }
+  .nav .links { display: flex; gap: 1.05rem; }
+  .nav .links a { text-decoration: none; color: var(--muted); font-size: 0.85rem; font-weight: 600; position: relative; padding: 2px 0; white-space: nowrap; }
   .nav .links a::after { content: ""; position: absolute; left: 0; bottom: -3px; width: 0; height: 1.5px; background: var(--brass); transition: width 0.3s var(--ease); }
   .nav .links a:hover { color: var(--ink); }
   .nav .links a:hover::after { width: 100%; }
@@ -270,6 +270,17 @@
   @media (max-width: 680px) { .bts { columns: 2; } }
   @media (max-width: 460px) { .bts { columns: 1; } }
 
+  /* ---------------- na budowie ---------------- */
+  #nabudowie { background: var(--surface); }
+  .site { columns: 3; column-gap: 1rem; }
+  .site figure { break-inside: avoid; margin: 0 0 1rem; position: relative; border-radius: var(--radius-lg); overflow: hidden; box-shadow: var(--shadow); background: var(--surface-2); }
+  .site img { width: 100%; display: block; transition: transform 0.55s var(--ease); }
+  .site figure:hover img { transform: scale(1.04); }
+  .site figure::after { content: ""; position: absolute; inset: 0; border: 1px solid rgba(23,37,59,0.08); border-radius: var(--radius-lg); pointer-events: none; }
+  .site .step { position: absolute; bottom: 11px; left: 11px; z-index: 2; background: rgba(11,18,28,0.72); backdrop-filter: blur(4px); border: 1px solid rgba(228,161,59,0.55); color: #F3EFE7; font-size: 0.6rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; padding: 0.3rem 0.65rem; border-radius: 999px; }
+  @media (max-width: 940px) { .site { columns: 2; } }
+  @media (max-width: 520px) { .site { columns: 1; } }
+
   /* ---------------- faq ---------------- */
   #faq { background: var(--surface-2); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
   .faq-list { max-width: 840px; display: grid; gap: 0.75rem; }
@@ -387,6 +398,7 @@
       <a href="#ofirmie">O firmie</a>
       <a href="#proces">Proces</a>
       <a href="#zakulisami">Za kulisami</a>
+      <a href="#nabudowie">Na budowie</a>
       <a href="#faq">FAQ</a>
       <a href="#kontakt">Kontakt</a>
     </nav>
@@ -569,6 +581,30 @@
         <figure><span class="step">Dobór ceramiki</span><img src="mrk-bts6.jpg" loading="lazy" alt="Wybór miski WC i stelaża podtynkowego w sklepie"></figure>
         <figure><span class="step">Dobór mebli</span><img src="mrk-bts7.jpg" loading="lazy" alt="Wybór szafki nocnej i lampy w salonie meblowym"></figure>
         <figure><span class="step">W showroomie</span><img src="mrk-bts8.jpg" loading="lazy" alt="Aranżacja w salonie wystawowym"></figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- NA BUDOWIE -->
+  <section id="nabudowie">
+    <div class="wrap">
+      <div class="sec-head reveal">
+        <span class="eyebrow">Na budowie</span>
+        <h2>Kurz, gruz, <em>konkret.</em></h2>
+        <p>Rozbiórka, instalacje, montaż, wykończenia — tak wygląda droga od pustych ścian do gotowego wnętrza. Bez upiększania.</p>
+      </div>
+      <div class="site reveal">
+        <figure><span class="step">Rozbiórka</span><img src="mrk-bud1.jpg" loading="lazy" alt="Łazienka w trakcie rozbiórki — skuta posadzka i gruz"></figure>
+        <figure><span class="step">Skuwanie i przebicia</span><img src="mrk-bud2.jpg" loading="lazy" alt="Skute nadproże z odsłoniętymi belkami stropu"></figure>
+        <figure><span class="step">Montaż kuchni</span><img src="mrk-bud3.jpg" loading="lazy" alt="Montaż korpusów zabudowy kuchennej"></figure>
+        <figure><span class="step">Gładzie i malowanie</span><img src="mrk-bud4.jpg" loading="lazy" alt="Pokój po gładziach, przygotowanie pod malowanie"></figure>
+        <figure><span class="step">Prace malarskie</span><img src="mrk-bud5.jpg" loading="lazy" alt="Kozły malarskie i folia ochronna na podłodze podczas remontu"></figure>
+        <figure><span class="step">Hydraulika</span><img src="mrk-bud6.jpg" loading="lazy" alt="Instalacja wodna — wodomierz i zawory pod zabudową"></figure>
+        <figure><span class="step">Wykończenia podłóg</span><img src="mrk-bud7.jpg" loading="lazy" alt="Świeżo ułożona podłoga w jodełkę i narzędzia"></figure>
+        <figure><span class="step">Układanie płytek</span><img src="mrk-bud8.jpg" loading="lazy" alt="Łazienka w wykończeniu — wielkoformatowe płytki marmurowe na ścianie"></figure>
+        <figure><span class="step">Przygotowanie ścian</span><img src="mrk-bud9.jpg" loading="lazy" alt="Ściana w trakcie przygotowania pod malowanie — gruntowanie i gładzie"></figure>
+        <figure><span class="step">Tynki i ościeżnice</span><img src="mrk-bud10.jpg" loading="lazy" alt="Pokój po tynkach z osadzoną ościeżnicą"></figure>
+        <figure><span class="step">Wykończenia wnętrza</span><img src="mrk-bud11.jpg" loading="lazy" alt="Pokój w trakcie wykończenia — drabina i świeżo malowane ściany"></figure>
       </div>
     </div>
   </section>
